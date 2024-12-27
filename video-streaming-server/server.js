@@ -12,6 +12,7 @@ app.get('/video', (req, res) => {
   const stat = fs.statSync(videoPath);
   const fileSize = stat.size;
   const range = req.headers.range;
+  //
 
   if (range) {
     const parts = range.replace(/bytes=/, '').split('-');
